@@ -14,28 +14,12 @@
     </head>
 
     <body>
-        <header>
-            <div class="grid-container">  
-                <div class="row">
-                    <img class="logo-img" src="images/adoptadog-logo.svg" alt="Silhouette of a dog sitting up with the caption of ADOPTADOG to the right of it">
-                </div>
-
-                <div class="row cart-icon">
-                    <img src="images/cart-icon.svg" alt="picture of a shopping cart">
-                </div>
-
-                <div class="cart-price">
-                    <p>$1234.56</p>
-                </div>
-
-                <div class="row sub-header">
-                    <p class="sub-padding">Seattle’s premiere dog adoption agency</p>
-                </div>
-                           
-                <div class="row checkout-button">
-                    <button class="cb-style">Checkout</button>
-                </div>
-            </div>
+        <header>                                  
+            <img class="logo-img" src="images/adoptadog-logo.svg" alt="Silhouette of a dog sitting up with the caption of ADOPTADOG to the right of it">
+            <img class="cart-icon" src="images/cart-icon.svg" alt="picture of a shopping cart">
+            <p class="cart-price">$1234.56</p>       
+            <p class="sub-header">Seattle’s premiere dog adoption agency</p>
+            <button class="cb-style checkout-button">Checkout</button>
         </header>
 
         <nav class="nav-header">
@@ -46,26 +30,26 @@
             <a href="blog.html">Blog</a>
         </nav>
 
-        <form method="get">            
+        <form id="contact" method="get">            
             <div class="container">
                 <h1 class="co-title">Checkout</h1>
 
                 <div class="row container-label marg-control">
                     <label class="col-12 label-pad" for="name">Name</label><br>
-                    <input class="col-6" type="text" id="name" name="name" required>
+                    <input class="col-7" type="text" id="name" name="name" required>
                 </div>
 
                 <div class="row container-label marg-control">
-                    <label class="col-12 label-pad" type="email">Email Address</label><br>
-                    <input class="col-6" type="email" id="email" name="email">
+                    <label class="col-12 label-pad">Email Address</label><br>
+                    <input class="col-7" type="email" id="email" name="email">
                 </div>
 
                 <div class="row container-label marg-control">
                     <label class="col-12 label-pad" for="address">Street Address</label><br>
-                    <input class="col-6" type="text" id="address" name="address" required>
+                    <input class="col-7" type="text" id="address" name="address" required>
                 </div>
 
-                <div class="row-control">
+                <div class="row-control col-7">
                     <div class="container-label">
                         <label for="city">City</label><br>
                         <input class="city" type="text" id="city" name="city" required>
@@ -74,7 +58,7 @@
                     <div class="container-label">
                         <label for="state">State</label><br>
                         <select class="state" id="state" name="state" required>
-                            <option value="none"></option>
+                            <option disabled selected value>--</option>
                             <option value="AL">AL</option>
                             <option value="AK">AK</option>
                             <option value="AZ">AZ</option>
@@ -134,16 +118,16 @@
                 </div>
             </div>
 
-            <div class="radio-cont">
+            <div class="radio-cont col-7">
                 <p class="container-label radio-pad">First Time Adopter?</p>
 
                 <label class="radio-control">Yes
-                    <input type="radio" checked="unchecked" name="radio">
+                    <input type="radio" name="radio" id="yes">
                     <span class="checkmark"></span>
                 </label>
 
                 <label class="radio-control">No
-                    <input type="radio" checked="unchecked" name="radio">
+                    <input type="radio" name="radio" id="no">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -152,7 +136,7 @@
                 <div class="container-label col-12">
                     <label for="pu-location">Pickup Location</label><br>
                     <select class="pu-loc" id="pu-location" name="pu-location" required>
-                        <option value="none"></option>
+                        <option disabled selected value>--</option>
                         <option value="store">Store</option>
                     </select>
                 </div>
@@ -166,7 +150,7 @@
 
                     <div class="col-2">
                         <p class="selected-dog selected-name">Lucas</p>
-                        <p class="selected-dog"><span class="span-style">Cost to Adopt: </span>$123.45</p>
+                        <p class="selected-dog price-style"><span class="span-style">Cost to Adopt: </span>$123.45</p>
                     </div>
 
                     <div class="col-1">
@@ -175,16 +159,18 @@
 
                     <div class="col-2">
                         <p class="selected-dog selected-name">Duffy</p>
-                        <p class="selected-dog"><span class="span-style">Cost to Adopt: </span>$123.45</p>
+                        <p class="selected-dog price-style"><span class="span-style">Cost to Adopt: </span>$123.45</p>
                     </div>
                 </div>
 
                 <p class="container-label">Total Adoption Cost</p>
                 <p style="font-size: 1.5vw; line-height: 0;">$1234.56</p>
                 
-                <button class="form-submit" type="submit">Submit</button>          
+                <button onclick="submitAlert(), getVal();" class="form-submit" type="submit">Submit</button>          
             </div>
         </form>
+
+        <script src="aad-javascript/aad-form.js"></script>
 
         <footer>
             <img src="images/adoptadog-logo.svg" alt="Silhouette of a dog sitting up with the caption of ADOPTADOG to the right of it">
@@ -204,7 +190,5 @@
 
             <p>© 2018 Adoptadog, LLC <span>|</span> Seattle, WA</p>
         </footer>   
-
-        <script src="aad-javascript/aad.js" charset="UTF-8"></script>
     </body>
 </html>
